@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>thead tbody tfoot</title>
+</head>
+<body>
+  <!-- 
+    2줄3칸 : tr*2>td*3
+   -->
+   <table>
+    <caption>
+      2줄3칸연습
+    </caption>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tr>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+    <tr>
+      <td>내용</td>
+      <td>내용</td>
+      <td>내용</td>
+    </tr>
+   </table>
+   <hr>
+   <!-- 2줄 3칸 -->
+   <table>
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <thead>
+      <!-- 1줄 3칸 : tr>td*3>{제목}-->
+      <tr>
+        <td>제목</td>
+        <td>제목</td>
+        <td>제목</td>
+      </tr>
+    </thead>
+    <tbody>
+       <!-- 1줄 3칸 : tr>td*3>{내용}-->
+      <tr>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+    </tbody>
+   </table>
+</body>
+</html>
