@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자연습</title>
+  <style>
+    /* #아이디 */
+    #section1{
+      background-color: #48bb48;
+    }
+    #section2{
+      background-color: #c9841e;
+    }
+    #section3{
+      background-color: #4cabe2;
+    }
+    /* .클래스명 */
+    /* .box 문서 내 모든 클래스box */
+    .box{color: #f00;}
+
+    /* 태그선택자=type선택자 : . 과 # 쓰지않는다*/
+    h1{color: #00f;}
+
+    /* 조상과후속: 공백구분자 */
+    /* section p{color: #ff0;} */
+
+    /* 부모>자식: > 자시구분자 */
+    section > p{color: #ff0;}
+
+    /* +인접형제 */
+    h1+p{background-color: #ccc;}
+
+    /* ~동생 */
+    h1~p{background-color: #352;}
+  </style>
+</head>
+<body>
+  <!-- 
+    div#wrap 
+    태그#아이디명
+    #아이디명
+  -->
+  <div id="wrap"></div>
+    <header>헤더</header>
+    <!-- .container -->
+    <div class="container">
+      <!-- section#section$*3-->
+      <section id="section1">
+         <!-- p+.box -->
+         <p>내용</p>
+         <div class="box">
+           <!-- h1+p+p -->
+           <!-- h1+p*2 -->
+          <p>형님</p>
+           <h1>섹션제목</h1>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis error perspiciatis eligendi voluptates. Nostrum nulla maxime dolorem voluptate dolores libero obcaecati ipsa corporis possimus dolor omnis, quibusdam ad dignissimos maiores!</p>
+           <p>동생</p>
+         </div>
+      </section>
+      <section id="section2">
+        <!-- p+.box -->
+        <p>내용</p>
+        <div class="box">
+          <!-- h1+p+p -->
+          <!-- h1+p*2 -->
+          <h1>섹션제목</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis error perspiciatis eligendi voluptates. Nostrum nulla maxime dolorem voluptate dolores libero obcaecati ipsa corporis possimus dolor omnis, quibusdam ad dignissimos maiores!</p>
+          <p>동생</p>
+        </div>
+      </section>
+      <section id="section3">
+         <!-- p+.box -->
+        <p>내용</p>
+        <div class="box">
+          <!-- h1+p+p -->
+          <!-- h1+p*2 -->
+          <h1>섹션제목</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis error perspiciatis eligendi voluptates. Nostrum nulla maxime dolorem voluptate dolores libero obcaecati ipsa corporis possimus dolor omnis, quibusdam ad dignissimos maiores!</p>
+          <p>동생</p>
+        </div>
+      </section>
+    </div>
+  <footer>푸터</footer>
+  <!-- //#wrap -->
+</body>
+</html>
