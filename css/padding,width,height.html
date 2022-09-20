@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>padding,width,height</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .wrap{
+      width: 1190px;
+      /* 블록레벨 가운데정렬 */
+      /* 부모에게 너비 지정 */
+      /* margin: 0 auto; */
+      margin: 0 auto;
+    }
+    section{
+      /* padding: 50px 100px; */
+      padding: 2rem; /*body 지정된 글자크기의 2베*/
+      border: 10px dashed #000;
+      border-left: 0;
+      border-right: 0;
+      /* margin: 2rem 0; */
+    }
+    .section1{
+      background-color: #ffae00;
+    }
+    .section2{
+      background-color: #00d9ff;
+    }
+    .section3{
+      background-color: #00ff80;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+  
+    <!-- div.slide -->
+    <div class="slide">
+      슬라이드
+    </div>
+    <!-- section.section$*3>h1>{section$}^p>lorem -->
+    <section class="section1">
+      <h1>section1</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, praesentium natus veniam doloribus fuga culpa ut perspiciatis ipsum reprehenderit adipisci! Quaerat illum tempore natus necessitatibus excepturi incidunt molestiae atque accusantium.</p>
+    </section>
+    <section class="section2">
+      <h1>section2</h1>
+      <p>Enim harum fugiat temporibus ea quo delectus dolor quam illum! Perferendis quasi quibusdam vero accusantium at voluptates distinctio! Ut nihil odio fugiat ratione commodi consectetur, repudiandae cum rem dignissimos fuga?</p>
+    </section>
+    <section class="section3">
+      <h1>section3</h1>
+      <p>Repellat beatae voluptatibus consequuntur commodi eaque quae delectus ex natus, magni repudiandae eveniet possimus dicta nemo asperiores vitae repellendus distinctio? Aliquam beatae ex facilis nam dolorum excepturi fugiat quam maxime.</p>
+    </section>
+    <!-- div.notice -->
+    <div class="notice">
+      공지사항
+    </div>
+</div>
+</body>
+</html>
