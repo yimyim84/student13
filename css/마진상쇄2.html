@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마진상쇄2</title>
+  <style>
+*{margin: 0; padding: 0;}
+.p{ width: 80%;
+    margin: 0 auto;
+    padding: 3rem;
+    background-color: #ccc;
+  }
+.p .c{
+  /* 자식의 마진(바깥여백)은 부모의 패딩(안쪽여백) */
+  /* margin: 3rem; 13줄로 대신 쓴다*/
+  background-color: #bf8;
+} 
+  </style>
+</head>
+<body>
+ <div class="p">
+  <div class="c">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit minus perferendis voluptates expedita eum, blanditiis facere et harum impedit odio neque. Perspiciatis velit veritatis quae provident perferendis doloribus culpa nostrum.</div>
+ </div> 
+</body>
+</html>
