@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow</title>
+  <style>
+    /* .box{} 10잠
+    .box1{} 10점
+    .box.box2{} 10+10점
+    .box2{} 10점
+    #sect1.box{} 100+10점
+    */
+
+    /* .box.box2{} 띄어쓰기를 안하면 한 요소에 동일하게
+    .box .box2{} 띄어쓰기를 하면 후손이다. */
+
+    /* .box.box2{} = .box2{} 같지만 점수가 box2{}10점 .box.box2{} 20점이므로 후순위보다 .box.box2{}적용된다.
+    !important 사용하면 좋지않으므로 위와같이 표현한다*/
+
+    .box{
+      width: 300px;
+      height: 100px;
+      background-color: #ccc;
+      margin: 0 0 50px 0;
+    }
+    .box2{overflow: scroll;}
+    .box3{overflow: auto;}
+    .box4{overflow: hidden;}
+  </style>
+</head>
+<body>
+  <!-- div.box.box$*4>lorem 
+      =
+      .box.box$*4>lorem
+  -->
+  <div class="box box1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea aperiam odit perspiciatis reprehenderit nisi ullam fugit eum natus, iste deserunt iure repudiandae inventore itaque, quaerat facilis incidunt minima quisquam maxime.</div>
+  <div class="box box2">Aut natus consectetur sed adipisci ea eveniet aspernatur ab quidem porro ut excepturi provident, magni itaque ducimus aliquid animi harum magnam! Ad similique accusantium hic dolorem suscipit praesentium eaque aperiam.</div>
+  <div class="box box3">Officia dignissimos libero facilis natus tenetur, quia quo repellat consectetur exercitationem eius sequi. Eum ipsa, rem esse, aspernatur ipsam explicabo officia, dolorum reprehenderit nam commodi in culpa sunt veniam veritatis.</div>
+  <div class="box box4">Omnis suscipit, maxime minus, numquam quas quos quae optio, accusamus laborum ad sunt ipsum fuga. Voluptate quo dolore laboriosam quidem, voluptas beatae natus ipsa consectetur incidunt error est, assumenda molestiae?</div>
+</body>
+</html>
