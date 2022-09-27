@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Raleway:wght@100;200;800;900&display=swap');
+/* font-family: 'Raleway', sans-serif; */
+
+/* reset */
+*{margin: 0; padding: 0;}
+
+/*typograph*/
+body{
+  font-family: '맑은고딕';
+  font-size: 0.875em;
+}
+
+/*공통*/
+/* 가변이미지=부모의너비에따르는이미지 */
+.img-wrap img{width: 100%; display: block;}
+/*레이아웃*/
+/*공통레이아웃*/
+/*페이지별*/
+
+.banner{
+  overflow: hidden;
+}
+
+.banner .left{
+  float: left;
+  width: 60%;
+  height: 400px;
+  border-radius:0 200px 200px 0 ;
+  overflow: hidden;
+  }
+
+.banner .right{
+  float: right;
+  width: 38%;
+  height: 400px;
+  box-sizing: border-box;
+  padding: 100px 0 0 100px;
+  /* text-align: center; */
+}
+
+.banner .right .desc,
+.banner .right .title,
+.banner .right .button{
+  font-family:'Raleway', sans-serif;
+}
+
+.banner .right .desc{
+  font-weight: 200;
+  font-size: 18px;
+  letter-spacing: 0px;
+}
+
+.banner .right .title{
+  margin: 10px 0 35px 0;
+  font-weight: 800;
+  font-size: 5rem;
+  letter-spacing: 1px;
+}
+
+.banner .right .button{
+  display: inline-block;
+  font-weight: 200;
+  font-size: 1.5rem;
+  border: 1px solid currentColor;
+  padding: 10px 20px;
+}
