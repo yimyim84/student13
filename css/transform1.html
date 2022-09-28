@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transform1</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .section{
+      position: relative; /* <-아래 position: absolute;의 기준요소*/
+      /* .section 브라우저 가득 = 뷰포트를 100% */
+      width: 100vw;
+      height: 100vh;
+      /*background-image: url(background/images/bg.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;  <-백그라운드보다 이미지가 작을때 백그라운드 크기로 맞춰준다. */
+      background: url(background/images/bg.jpg) no-repeat center/cover;
+      
+    }
+    .section .slogan{
+      /* 블록요소 수평수직 가운데 위치하게 하는 방법 */
+      position: absolute; /* <-position: absolute;하면 부모에 기준요소를 지정해줘야한다.*/
+      top:50%; left: 50%;
+      transform: translate(-50%,-50%); /*본인요소크기의 수평,수직이동*/
+      padding: 25px 50px;
+      background-color: rgba(0,0,0,0.2);
+    }
+    .section .slogan span{
+      display: block;
+      color:#fff;
+      /* background-color: #666; */
+      text-align: center;
+     }
+     .section .slogan .title{
+      font-size: 100px;
+      text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.5);
+    }
+    .section .slogan .desc{
+      font-size: 28px;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <div class="slogan">
+      <span class="title">title title</span>
+      <span class="desc">Lorem ipsum dolor sit amet.</span>
+    </div>
+  </div>
+</body>
+</html>
