@@ -21,6 +21,12 @@ body{
   overflow: hidden;
 }
 
+.banner::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
 .banner .left{
   float: left;
   width: 60%;
