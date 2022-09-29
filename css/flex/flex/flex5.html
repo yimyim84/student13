@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex layout - header 1row 3단 레이아웃2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        padding: 1rem;
+        min-width: 960px;
+      }
+      .parent{
+        display: flex;
+
+        /* 주축의 정렬 주축의 시작 */
+        justify-content: flex-start; /*안해도 같은 값이다.*/
+
+        /* 플렉스 아이템이 교차축의 가운데 */
+        align-items: center;
+
+        background-color: #ccc;
+      }
+
+      .parent .child{
+      background-color: #999;
+    }
+    .logo{
+      width: 150px;
+      height: 150px; /*고정높이를 가져가야하면 지정해주어야한다*/
+    }
+    .navigation{
+      width: 200px;
+      /* height: 80px */
+      line-height: 80px; /* 글자를 세로가운데오게 */
+      margin-left: 20px;
+    }
+    .search{
+      /* 플렉스박스에서 
+      주축의 정렬 주축의 시작 justify-content: flex-start; */
+      /* 플렉스 아이템 중 개별아이템에만 남은여백을 다 사용하고 싶을때 margin 사용한다
+      값은 auto로 지정 */
+      margin-left: auto;
+      width: 80px;
+      height: 60px;
+    }
+
+     
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="parent">
+        <div class="logo child">logo</div>
+        <div class="navigation child">nav</div>
+        <div class="search child">search</div>
+      </header>
+    </div>
+  </body>
+</html>

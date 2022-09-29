@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex layout - header 3단 레이아웃</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    .container {
+      padding: 1rem;
+      min-width: 960px;
+    }
+    .parent{
+      /* 플렉스박스 */
+      display: flex;
+      /* 플렉스 박스의 방향 column :주축의 방향이 세로로 바뀜 */
+      flex-direction: column;
+      /* 주축의 방향에서 가운데정렬*/
+      justify-content: center;
+      /* 교차축ㄴ에서 가운데정렬*/
+      align-items: center;
+
+      /* .util-top의 기준요소 */
+      position: relative;
+
+      background-color: #ccc;
+    }
+    .parent .child{
+      background-color: #999;
+    }
+    .logo{
+      width: 150px;
+      height: 150px; /*고정높이를 가져가야하면 지정해주어야한다*/
+    }
+    .navigation{
+      width: 200px;
+      /* height: 80px */
+      line-height: 80px; /* 글자를 세로가운데오게 */
+    }
+    .util-top{
+      /* position: absolute;의 가까운 조상(.parent)에 기준요소( position: relative;)를 지정해주자  */
+      position: absolute;
+
+      /* position: absolute; 후 위치지정 */
+      /* top:0; */
+      right: 0;
+      bottom: 0;
+
+      width: 80px;
+      height: 60px;
+    }
+   
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="parent">
+      <div class="logo child">
+        logo
+      </div>
+      <div class="navigation child">
+        nav
+      </div>
+      <div class="util-top child">
+        util-top
+      </div>
+    </header>
+  </div>
+</body>
+
+</html>
