@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex layout - header 1row 3단 레이아웃1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        padding: 1rem;
+        min-width: 960px;
+      }
+      .parent{
+        /* 플렉스 박스 선언 */
+        display: flex;
+        /* 플렉스아이템 주축정렬 양끝정렬 균등여백 */
+        justify-content: space-between;
+        /* 플렉스아이템 교차축 가운데정렬 */
+        align-items: center;
+
+        background-color: #ccc;
+      }
+      .parent .child{
+      background-color: #999;
+    }
+    .logo{
+      width: 150px;
+      height: 150px; /*고정높이를 가져가야하면 지정해주어야한다*/
+    }
+    .navigation{
+      /* 플렉스 컨테이너의 플렉스아이템 배치되고 남은여유공간에 맞게 해당 플렉스 아이템확장 */
+      flex-grow: 1;
+      
+      width: 200px;
+      /* height: 80px */
+      line-height: 80px; /* 글자를 세로가운데오게 */
+    }
+
+    .navigation .inner{
+      background-color: #ef8;
+
+      /* 좌우공간 여백주고싶을때 margin주지말고 padding준다 =>margin 넣으면 너비계산이 복잡해진다. container이외의 안쪽 블록들은 padding을 준다 */
+      padding: 0 10px;
+    }
+
+    .util-top{
+      width: 80px;
+      height: 60px;
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="parent">
+        <div class="logo child">logo</div>
+        <div class="navigation child">
+          <div class="inner">nav</div>
+        </div>
+        <div class="util-top child">util-top</div>
+      </header>
+    </div>
+  </body>
+</html>
