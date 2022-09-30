@@ -22,13 +22,24 @@
       display: flex;
       justify-content: center;
       background-color: #ccc;
-
+      
     }
-
+    /* 플렉스아이템 */
     .navigation{
-      width:100%;
+       /* width:100%; <-width 주지말아라*/
 
+       /*  */
+       flex-grow: 0;
+
+       /*  */
+       flex-shrink: 1;
+
+       /* 플렉스 아이템의 고유크기를 지정하는방식
+       width가 지정되어있으면 width를 따르고
+       width,height가없고 basis도 없을경우(=flex-basis: auto;) 플렉스 아이템이 자식크기만큼*/
+       flex-basis: auto;
     }
+    
     .navigation> ul{
       display: flex;
     }
