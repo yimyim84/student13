@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex 7</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .wrap{
+      margin: 50px;
+      padding: 1rem;
+      /* background-color: #ccc; */
+    }
+    .parent{
+      /* min-width: 1190px; 최소크기 1190px보다는 커라*/
+      max-width: 1190px;
+      margin: 0 auto;
+      display: flex;
+
+      /* flex-direction: row; <-기본값 */
+
+      /* 플렉스 컨테이너보다 플렉스아이템 총합크기가 클때 즉 플렉스아이템이 넘쳐나면 줄바꿈 여부
+      flex-wrap: nowrap; <-기본값(즐바꿈하지않음)
+      */
+      flex-wrap: wrap;
+
+      /* justify-content: flex-start; <-기본값 */
+
+      /* align-items:stretch; <-기본값 */
+
+      padding: 1rem;
+      box-sizing: border-box;
+      /* background-color: #0f0; */
+    }
+    .parent .item{
+      /* 플렉스 컨테이너 공간에 맞게 플렉스아이템 확장
+       flex-grow: 0; <-기본값 */
+      flex-grow: 0;
+      /* 플렉스컨테이너 공간에 맞게 축소
+      flex-shrink: 1; <-기본값 */
+      flex-shrink: 0;
+      /*width: 25%; 4단*/
+      width: 33.33%;
+      padding: 1rem;
+      /* border: 1px solid #000; */
+      box-sizing: border-box;
+      /* background-color: #f00; */
+    }
+    .parent .item .inner{
+      height: 300px; /*높이는 자식으로부터*/
+      background-color: #ef8;
+      box-sizing: border-box;
+      
+    }
+  </style>
+</head>
+<body>
+  <!-- .item.item$*7>.inner>{item$} -->
+  <div class="wrap">
+    <div class="parent">
+      <div class="item item1">
+        <div class="inner">item1</div>
+      </div>
+      <div class="item item2">
+        <div class="inner">item2</div>
+      </div>
+      <div class="item item3">
+        <div class="inner">item3</div>
+      </div>
+      <div class="item item4">
+        <div class="inner">item4</div>
+      </div>
+      <div class="item item5">
+        <div class="inner">item5</div>
+      </div>
+      <div class="item item6">
+        <div class="inner">item6</div>
+      </div>
+      <div class="item item7">
+        <div class="inner">item7</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
