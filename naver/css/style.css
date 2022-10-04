@@ -1,0 +1,231 @@
+@charset "UTF-8";
+/* reset */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+select {
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font-family: "NanumSquare", "나눔고딕", "Dotum", "돋움", "Helvetica", "Arial", "AppleSDGothicNeo", sans-serif;
+  font-size: 14px;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+img {
+  vertical-align: top;
+}
+
+li,
+ol,
+ul {
+  list-style: none;
+}
+
+address,
+em,
+i {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+th,
+b,
+em {
+  font-weight: normal;
+}
+
+/* 공통 */
+
+/* 화면에 안보이게하기 */
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  /* left: -9999px; * <-clip이 들어가면 left 안 써도 되고 left가 들어가면 clip을 안써도 된다.*/
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.chinese {
+  font-family: 'NanumBarunGothic', '나눔바른고딕', 'Dotum', '돋움', 'Helvetica', 'Arial', 'AppleSDGothicNeo', sans-serif;
+}
+
+.text_line {
+  display: block;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.hidden {
+  overflow: hidden !important;
+}
+
+button {
+  border: 0;
+  background: none;
+  -webkit-appearance: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input {
+  border: 0;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+}
+
+caption {
+  text-indent: -9999px;
+  font-size: 0;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  font-family: 'NanumSquare' !important;
+  color: #333 !important;
+}
+
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: 'NanumSquare' !important;
+  color: #333 !important;
+}
+
+input:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: 'NanumSquare' !important;
+  color: #333 !important;
+}
+
+input:-ms-input-placeholder {
+  /* IE 10+ */
+  font-family: 'NanumSquare' !important;
+  color: #333 !important;
+}
+
+textarea::-moz-placeholder {
+  font-family: 'NanumSquare' !important;
+  color: #333 !important;
+}
+
+textarea:-moz-placeholder {
+  font-family: 'NanumSquare' !important;
+  color: #333 !important;
+}
+
+textarea:-ms-input-placeholder {
+  font-family: 'NanumSquare' !important;
+  color: #333 !important;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+body,
+html {
+  /* height: 100vh; 
+  버전이 낮은 곳에서는 height: 100vh;를 인식하지 못하여 height: 100%;를 써야한다.*/
+  height: 100%;
+  font-style: normal;
+  line-height: 1.4;
+  -webkit-text-size-adjust: none;
+}
+/* 레이아웃 */
+
+/* header */
+header{
+  margin: 50px;
+}
+.header_logo{
+  /* background-image: url(../img/header_logo.png);
+  background-position: center;
+  background-repeat: no-repeat; */
+ background: url(../img/header_logo.png) center no-repeat;
+ width: 87px;
+ height: 17px;
+ background-size:contain;
+ background-color: #ccc;
+}
+.header_logo a{
+  display: block;
+  width: 100%;
+  height: 100%;
+} 
+.header_logo a span{}
