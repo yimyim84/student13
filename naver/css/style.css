@@ -207,25 +207,136 @@ html {
   line-height: 1.4;
   -webkit-text-size-adjust: none;
 }
-/* 레이아웃 */
 
-/* header */
+/* 변수선언 */
+body{
+  --naver-color:#1ec545;
+  --header-height:80px
+}
+
+/* 레이아웃 */
 header{
-  margin: 50px;
+  position: relative;
+  height: var(--header-height);
+  background-color: rgba(255, 255, 255 0.7);
 }
-.header_logo{
-  /* background-image: url(../img/header_logo.png);
-  background-position: center;
-  background-repeat: no-repeat; */
- background: url(../img/header_logo.png) center no-repeat;
- width: 87px;
- height: 17px;
- background-size:contain;
- background-color: #ccc;
+.header_wrap{
+  display: flex;
+  justify-content:space-between; /*양끝정렬 여백균등*/
+  align-items: center; /*교차축 가운데*/
+  margin: 0 auto;
+  max-width: 1600px;
 }
-.header_logo a{
+  
+/* header */
+   .header_logo{
+    /* background-image: url(../img/header_logo.png);
+    background-position: center;
+    background-repeat: no-repeat; */
+    background: url(../img/header_logo.png) center no-repeat;
+    width: 87px;
+    height: 17px;
+    background-size:contain;
+    background-color: #ccc;
+  }
+  .header_logo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  } 
+/* nav */
+  nav{
+  }
+  nav .gnb_menu{
+    /*메뉴 가로정렬하는 3가지방법 : inline-block , float, flex 
+    네이버는inline-block , float사용, 우리는 flex로 실습*/
+
+    /* 플렉스박스 플렉스컨테이너 */
+    display: flex;
+  }
+  nav .gnb_menu_list{
+    /* 플레스 아이템 */
+
+  }
+  nav .gnb_menu_list .gnb_menu_item{
+  position: relative;
   display: block;
-  width: 100%;
-  height: 100%;
-} 
-.header_logo a span{}
+  margin: 0 30px;
+  height: var(--header-height);
+  padding: 25px 0 0 0; /* 높이조절 :height와padding을 쓰거나 line-height */
+  font-size: 18px;
+  color: #000;
+  }
+  nav .gnb_menu_list .gnb_menu_item:after{
+    /* :after 인라인레벨 */
+    content:' '; 
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: calc(100% + 3px); /*계산기 함수 calc(값1 + 값2)*/
+    height: 2px;
+    background-color: var(--naver-color);
+    transform: scale(0);
+  }
+  nav .gnb_menu_list:hover .gnb_menu_item:after,
+  nav .gnb_menu_list .gnb_menu_item:focus:after      {
+    transform: scale(1);
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+  }
+   /* 
+  .gnb_menu_list 대메뉴 
+  .gnb_dropMenu_wrap 서브메뉴 
+  */
+
+  /* 모든 depth2 서브메뉴 => .gnb_dropMenu_wrap */
+  nav .gnb_menu_list .gnb_dropMenu_wrap{
+    position: absolute;
+    /* display: none; <= depth1만 보이게 하기위해: depth2 서브메뉴 작업시 삭제*/
+    /* left: 0; top: 0; 해본다 <-position: absolute;을 했기때문에 기본요소를 어디에줄지 확인하기 위해 */
+    left: 0; top:var(--header-height);
+    width: 100%;
+    background-color: var(--naver-color);
+    display: flex;
+    justify-content: center;
+    display: none;/*테스트 후 삭제*/
+  }
+
+  /*대메뉴의 마우스오버시 서브메뉴*/
+  nav .gnb_menu_list:hover .gnb_dropMenu_wrap{
+    display: flex; 
+  }
+
+  /* 대메뉴(depth1) 첫번째에 해당하는 서브메뉴 => :nth-of-type(1)  */
+  nav .gnb_menu_list:nth-of-type(3) .gnb_dropMenu_wrap{
+    /* display: flex;  */
+    /*서브작업 후 삭제*/
+  }
+
+  .gnb_dropMenu_wrap > li{
+    width: 190px;
+    height: 340px;
+    padding: 1.5rem 0 0 1.5rem;
+    border-left: 1px solid #4bd16a;
+  }
+  .gnb_dropMenu_wrap > li:last-child{
+    border-right: 1px solid #4bd16a;
+  }
+  .gnb_dropMenu_wrap .gnb_dropMenu{
+  }
+  .gnb_dropMenu li{
+    padding: 0.3rem 0;
+  }
+  .gnb_dropMenu .depth_blank{
+    margin-bottom: 1rem;
+  }
+  .gnb_dropMenu li .gnb_dropMenu_item{
+    color: #fff;
+  }
+
+
+/* header_util */
+  .header_util{
+    background-color: #999; /*작업후삭제*/
+  }
