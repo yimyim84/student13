@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="src/css/jquery.bxslider.css" rel="stylesheet" />
+	<link rel="stylesheet" href="src/css/style.css"> 
+	<title>bxslider연습2</title>
+</head>
+<body>
+
+<ul class="visual">
+  <li><img src="images/img_main_slide7.jpg" /></li>
+  <li><img src="images/img_main_slide9.jpg" /></li>
+  <li><img src="images/img_main_slide10.jpg" /></li>
+</ul>
+
+<!-- jQuery library -->
+<script src="src/vendor/jquery-3.1.1.min.js"></script>
+<!-- bxSlider Javascript file -->
+<script src="src/js/jquery.bxslider.js"></script>
+<script>
+	$(document).ready(function(){ 
+		/*브라우저가 html을 다 불러들였으면 이 스크립트를 실행하라*/
+		$('.visual').bxSlider({
+			//슬라이드가 움직이는 방향 
+			//mode: 'horizontal', 수평
+			//mode: 'vertical', 수직
+			mode:'fade', //슬라이드 페이드인 아웃
+
+			moveSlides: 1, //한번에 움직일 슬라이드 수
+
+			// slideMargin: 40, //슬라이드마진값
+
+			infiniteLoop: true, //무한루프
+
+			// slideWidth: 660, <-슬라이드 크기 지정 
+			// style.css보다 body안에 스타일소스를 적용하면 먼저 적용된다.
+			
+			// minSlides: 3, 한번에 보여질 슬라이드 수
+			// maxSlides: 3, 한번에 보여질 슬라이드 수
+			speed: 800,
+		});
+	});
+</script>
+
+</body>
+</html>
