@@ -301,6 +301,7 @@ header{
     display: flex;
     justify-content: center;
     display: none;/*테스트 후 삭제*/
+    z-index: 10000; /*서브메뉴 레이어를 최상위로*/
   }
 
   /*대메뉴의 마우스오버시 서브메뉴*/
@@ -388,5 +389,67 @@ header{
   .sitemap_box .btn_sitemap span:nth-of-type(4){
     top:20px; width:100%;
   }
+
+/* 플러그인 */
+/* bxslider */
+.bx-wrapper{overflow: hidden;}
+.bx-wrapper .bx-controls-direction a {
+  width: 46px; height: 46px;
+} /* <- src/css/jquery.bxslider.css의 .bx-wrapper .bx-controls-direction a{width: 32px;
+  height: 32px;}가 적용되어있으므로 내가만든 지금 이 스타일시트(css/style.css)에.bx-wrapper .bx-controls-direction a{width: 46px;
+  height: 46px;}을 적용하여 크기를 맞춘다*/
+
+/* 이미지사용시 
+.bx-wrapper .bx-prev {
+  background: url(../img/sprite.png) -296px -99px no-repeat; // = background-image: url(../img/sprite.png);
+  background-position: -296px -99px; //
+  background-size: 474px 1500px; }
+ */
+.bx-wrapper .bx-prev {
+  background-image: none;
+  border-left: 2px solid #fff;
+  border-top: 2px solid #fff;
+  transform: rotate(-45deg) translate(0, -50%);
+  transform-origin: 0 0;
+  left: 25px;
+}
+.bx-wrapper .bx-prev:hover, 
+.bx-wrapper .bx-prev:focus{
+  background-position: -296px -99px; 
+}
+.bx-wrapper .bx-next {
+  background-image: none;
+  border-left: 2px solid #fff;
+  border-top: 2px solid #fff;
+  transform: rotate(135deg) translate(0, 50%);
+  transform-origin: 0 0;
+  right: -25px;
+}
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {
+  background-image: none;
+}
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto{
+bottom: 30px;
+}
+.bx-wrapper .bx-pager.bx-default-pager a{
+  /*슬라이드버튼을 네모로*/
+width: 24px; height: 4px;
+border-radius: 0;
+border: 0 none;
+}
+
+/* 플러그인 */
+/* swiper */
+.swiper{}
+.swiper .swiper-wrapper{}
+.swiper .swiper-wrapper .swiper-slide{}
+.swiper-slide img{
+  /* 가변이미지 */
+  width: 100%; /*부모의 크기에 맞게 이미지 크기 조정*/
+  /*max-width: 100%; 원래 이미지크기이상 되지 말아라*/
+  height: auto;
+}
 
 
