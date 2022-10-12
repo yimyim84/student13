@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>단연습</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* 단스타일 여기서부터 */
+      .my-dan .my-row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between; /*양끝정렬 여백동일*/
+        align-items: center;
+        align-content: center;
+        margin: 0 0 50px 0;
+      }
+      .my-dan .my-row .my-col {
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+      .my-dan.grid1 .my-row .my-col {
+        flex-basis: 100%;
+      }
+      .my-dan.grid2 .my-row .my-col {
+        flex-basis: 50%;
+      }
+      .my-dan.grid3 .my-row .my-col {
+        flex-basis: 33.33%;
+      }
+
+      .my-dan.padding10 .my-row .my-col {
+        padding: 0 10px;
+      }
+      .my-dan.padding20 .my-row .my-col {
+        padding: 0 20px;
+      }
+      .my-dan.padding30 .my-row .my-col {
+        padding: 0 30px;
+      }
+
+      .my-dan .my-row .my-col-inner {
+        background-color: #ccc;
+        border: 1px solid #000;
+      }
+      .my-dan .my-row .my-col-inner img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 3단 -->
+      <div class="my-dan grid3">
+        <div class="my-row">
+          <div class="my-col">
+            <div class="my-col-inner">여기에 배너,동영상,슬라이드 요소복사</div>
+          </div>
+          <div class="my-col">
+            <div class="my-col-inner">여기에 배너,동영상,슬라이드 요소복사</div>
+          </div>
+          <div class="my-col">
+            <div class="my-col-inner">여기에 배너,동영상,슬라이드 요소복사</div>
+          </div>
+        </div>
+      </div>
+      <!-- //3단 -->
+      <!-- 3단 단사이여백 -->
+      <div class="my-dan grid3 padding10">
+        <div class="my-row">
+          <div class="my-col">
+            <div class="my-col-inner">여기에 배너,동영상,슬라이드 요소복사</div>
+          </div>
+          <div class="my-col">
+            <div class="my-col-inner">여기에 배너,동영상,슬라이드 요소복사</div>
+          </div>
+          <div class="my-col">
+            <div class="my-col-inner">여기에 배너,동영상,슬라이드 요소복사</div>
+          </div>
+        </div>
+      </div>
+      <!-- //3단 단사이여백-->
+      <!-- 2단 -->
+      <div class="my-dan grid2">
+        <div class="my-row">
+          <div class="my-col">
+            <div class="my-col-inner">여기에 배너,동영상,슬라이드 요소복사</div>
+          </div>
+          <div class="my-col">
+            <div class="my-col-inner">여기에 배너,동영상,슬라이드 요소복사</div>
+          </div>
+        </div>
+      </div>
+      <!-- //2단 -->
+      <!-- 1단 -->
+      <div class="my-dan grid1">
+        <div class="my-row">
+          <div class="my-col">
+            <div class="my-col-inner">여기에 배너,동영상,슬라이드 요소복사</div>
+          </div>
+        </div>
+      </div>
+      <!-- //1단 -->
+    </div>
+  </body>
+</html>
