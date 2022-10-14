@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>단연습</title>
+    <title>단템플릿</title>
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+      .wrap{width: 80%; margin: 0 auto;} /*테스트용*/
+
       /* 단스타일 여기서부터 */
       .my-dan .my-row {
         display: flex;
@@ -21,7 +23,22 @@
         align-content: center;
         margin: 0 0 50px 0;
       }
+
+      .my-dan.padding5 .my-row {
+        margin: 0 -5px;
+      }
+      .my-dan.padding10 .my-row {
+        margin: 0 -10px;
+      }
+      .my-dan.padding20 .my-row {
+        margin: 0 -20px;
+      }
+      .my-dan.padding30 .my-row {
+        margin: 0 -30px;
+      }
+
       .my-dan .my-row .my-col {
+        box-sizing: border-box;
         flex-grow: 1;
         flex-shrink: 1;
       }
@@ -35,6 +52,9 @@
         flex-basis: 33.33%;
       }
 
+      .my-dan.padding5 .my-row .my-col {
+        padding: 0 5px;
+      }
       .my-dan.padding10 .my-row .my-col {
         padding: 0 10px;
       }
@@ -46,14 +66,33 @@
       }
 
       .my-dan .my-row .my-col-inner {
-        background-color: #ccc;
-        border: 1px solid #000;
       }
       .my-dan .my-row .my-col-inner img {
         width: 100%;
         height: auto;
         display: block;
       }
+
+    /* 배너매니저 유튜브 동영상 스타일 */
+    .df-bannermanager{
+      width: 100%;
+      /* max-width: 최대크기px; */
+    }
+    .df-bannermanager>div{
+     position: relative;
+     /* 너비에 해당되는 부분을 .parent에 준다. */
+     /* max-width: 768px; */
+     /* 16:9비율 = 0.5625% */
+     /* 4:3비율 =0.75% */
+     padding-top: 56.25%;
+     background-color: #000;
+    }
+    .df-bannermanager iframe{
+     position: absolute;
+     left: 0; top: 0;
+     width: 100%;
+     height: 100%;
+    }
     </style>
   </head>
   <body>
@@ -74,7 +113,7 @@
       </div>
       <!-- //3단 -->
       <!-- 3단 단사이여백 -->
-      <div class="my-dan grid3 padding10">
+      <div class="my-dan grid3 padding5">
         <div class="my-row">
           <div class="my-col">
             <div class="my-col-inner">여기에 배너,동영상,슬라이드 요소복사</div>
