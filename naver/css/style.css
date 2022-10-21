@@ -1,4 +1,7 @@
 @charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Raleway:wght@100;200;800;900&display=swap');
+
 /* reset */
 * {
   -webkit-box-sizing: border-box;
@@ -44,7 +47,7 @@ input,
 textarea,
 select,
 button {
-  font-family: "NanumSquare", "나눔고딕", "Dotum", "돋움", "Helvetica", "Arial", "AppleSDGothicNeo", sans-serif;
+  font-family: 'Nanum Gothic',"NanumSquare", "나눔고딕", "Dotum", "돋움", "Helvetica", "Arial", "AppleSDGothicNeo", sans-serif;
   font-size: 14px;
 }
 
@@ -389,6 +392,130 @@ header{
   .sitemap_box .btn_sitemap span:nth-of-type(4){
     top:20px; width:100%;
   }
+/* .main_centent */
+.main_content{
+  padding: 120px 150px;
+  /*가운데정렬방법 
+  :위에처럼 정의해도되고 주석처리한거처럼 정의해도된다. 
+  width: 80;
+  max-width: 1600px;
+  margin: 0 auto;
+  */
+}
+.main_content .content_summary{
+  display: flex;
+  /*기본값
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  */
+}
+.content_summary .summary_container{
+  flex-basis: 25%; /*플렉스의 크기지정할때는 flex-basis로:가로축일때는 너비가크기값이고 세로축일때는 높이가크기값이다.*/
+  /*기본값
+  flex-grow: 0;
+  flex-shrink: 1;
+  */
+  width: 25%; /*플렉스의 후손=플렉스아이템의 width.height때문에 값을 정확히 지정해줘야한다. */
+  border: 1px solid #f00;
+  padding-right: 50px;
+}
+.content_summary h3{
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+.content_summary .text_wrap{
+  height: 76px;
+}
+.content_summary .text_wrap .title_text{
+  width: 100%;
+  /* margin: 30px 0; */
+}
+.content_summary .text_wrap .title_text strong{
+  display: block;
+  /*말줄임지정 시작*/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*말줄임표지정 끝*/
+  font-weight: 700;
+}
+.content_summary .text_wrap .desc_text{
+  /* 2줄이상 상태의 말줄임 시작*/
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /*몇줄지정*/
+  /* 2줄이상 상태의 말줄임 끝*/
+  margin-top: 10px;
+}
+
+/* 바로가기 */
+.content_summary a.summary_link{
+  position: relative;
+  color: #000;
+  padding-right: 30px;
+}
+.content_summary a.summary_link:hover{
+  text-decoration: underline;
+}
+/* 바로가기 옆에 화살표표시 */
+.content_summary a.summary_link .icon_arrow{
+  display: block; /*인라인레벨은 width를 지정할수 없다 width를 지정하기위해서 display: block;*/
+  /* 일반흐름에서제외, 기준요소는 .content_summary a.summary_link에 준단*/
+  position: absolute;
+  right: 0; top: 0;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+}
+.content_summary a.summary_link .icon_arrow:after{
+  content: "";
+  position: absolute; /*<- 이것의 기준요소는 부모인 .content_summary a.summary_link .icon_arrow의 position: absolute;이다*/
+  left: 50%; top:50%; /*부모요소의 가운데시작*/
+  transform: translate(-50%, -50%); /*자기크기의 반만큼 이동*/
+  width: 5px; height: 8px; /*after,before는 크기를 지정해줘야한다*/
+  background: url(../img/sprite.png) no-repeat;
+  background-position: -102px -50px;
+}
+
+.content_summary a.summary_link:hover .icon_arrow{
+  background-color: var(--naver-color);
+}
+.content_summary a.summary_link:hover .icon_arrow:after{
+  background-position: -108px -49px;
+}
+
+.content_summary .news{}
+.content_summary .career{
+  font-size: 18px;
+}
+.content_summary .stock1{}
+.content_summary .stock1 .price{
+  font-size: 36px;
+  letter-spacing: -1.7px;
+  border-bottom: 1px solid #000;s
+}
+.content_summary .stock1 .price .unit{
+  font-size:12px;
+}
+.content_summary .stock1 .text_wrap{ position: relative;}
+.content_summary .stock1 .text_wrap .figure{
+  position: absolute;
+  bottom: 26px; right: 0;
+}
+.content_summary .stock1 .text_wrap .date{ text-align: right; }/*P태그는 블록 => 블록 안에서 정렬은 text-align으로*/
+
+.content_summary .stock2{
+  font-size: 18px;
+}
+
+.main_content .content_service{}
+.main_content .content_support{}
+
+
+/*********플러그인********/
 
 /* 플러그인 */
 /* bxslider */

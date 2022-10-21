@@ -1,0 +1,92 @@
+/* 단스타일 여기서부터 */
+.my-dan .my-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between; /*양끝정렬 여백동일*/
+  align-items: center;
+  align-content: center;
+  margin: 0 0 50px 0;
+}
+
+.my-dan.padding5 .my-row {
+  margin: 0 -5px;
+}
+.my-dan.padding10 .my-row {
+  margin: 0 -10px;
+}
+.my-dan.padding20 .my-row {
+  margin: 0 -20px;
+}
+.my-dan.padding30 .my-row {
+  margin: 0 -30px;
+}
+
+.my-dan .my-row .my-col {
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.my-dan.grid1 .my-row .my-col {
+  flex-basis: 100%;
+}
+.my-dan.grid2 .my-row .my-col {
+  flex-basis: 50%;
+}
+.my-dan.grid3 .my-row .my-col {
+  flex-basis: 33.33%;
+}
+
+.my-dan.padding5 .my-row .my-col {
+  padding: 0 5px;
+}
+.my-dan.padding10 .my-row .my-col {
+  padding: 0 10px;
+}
+.my-dan.padding20 .my-row .my-col {
+  padding: 0 20px;
+}
+.my-dan.padding30 .my-row .my-col {
+  padding: 0 30px;
+}
+
+.my-dan .my-row .my-col-inner {
+}
+.my-dan .my-row .my-col-inner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 배너매니저 유튜브 동영상 스타일 */
+.df-bannermanager{
+width: 100%;
+/* max-width: 최대크기px; */
+}
+.df-bannermanager>div{
+position: relative;
+/* 너비에 해당되는 부분을 .parent에 준다. */
+/* max-width: 768px; */
+/* 16:9비율 = 0.5625% */
+/* 4:3비율 =0.75% */
+padding-top: 56.25%;
+background-color: #000;
+}
+.df-bannermanager iframe{
+position: absolute;
+left: 0; top: 0;
+width: 100%;
+height: 100%;
+}
+
+/*상품목록 추천상품*/ 
+.xans-product-listrecommend{ position: relative;}
+.listrecommend-swiper{ width: 85%;}
+.listrecommend-swiper .ec-base-product .prdList{
+  width: 100%;
+  overflow: hidden;
+}
+.xans-product-listrecommend .swiper-button-next, 
+.xans-product-listrecommend .swiper-button-prev{
+  color:#f00;
+}
