@@ -511,7 +511,96 @@ header{
   font-size: 18px;
 }
 
-.main_content .content_service{}
+/* .content_service */
+.main_content .content_service{margin-top: 150px;}
+.main_content .content_service ul {
+  display: flex;
+  flex-wrap: wrap; /* 플렉스아이템의 줄바꿈 */
+}
+
+/* 단(column)의 크기는 플렉스아이템에 지정한다 */
+.main_content .content_service li{
+ /* flex-basis: 33.33%; */
+ width: 33.33%; /*플렉스아이템의 후손의 크기가 플렉스아이템보다 클 경우를 생각하여 
+ flex-direction:row일경우 width로 지정
+ flex-direction:column일경우 height로 지정*/
+ box-sizing: border-box;
+ overflow: hidden;
+}
+li.service_thumbnail_box a {
+  position: relative;
+  color: #fff;
+}
+li.service_thumbnail_box a:after {
+  content: '';
+  display: block;
+  position: absolute; /*기준요소:li.service_thumbnail_box a */
+  left: 0; top:0;
+  width: 100%; height: 100%;
+  background-color: rgba(8, 21, 88, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 10;
+}
+li.service_thumbnail_box:hover a:after {
+  opacity: 1;
+}
+
+/* 가변이미지 수정 */
+li.service_thumbnail_box .thumbnail{
+  /*.service_thumbnail_box요소에서 마우스아웃상태일때 .thumbnail  */
+  width: 100%;
+  transform:scale(1);
+  transition: all 0.5s;
+}
+li.service_thumbnail_box:hover .thumbnail{
+  /*.service_thumbnail_box요소에서 마우스 hover상태일때 .thumbnail  */
+  transform:scale(1.2);
+}
+li.service_thumbnail_box .thumbnail img{
+  /* max-width=100% 원본보다 커지지말아라*/
+  width: 100%;
+  height: auto;
+}
+
+li.service_thumbnail_box .description {
+  z-index: 20;
+  position: absolute; /*일반흐름에서 제외:너비지정하지않을경우 너비와높이를 자식,후손크기가져온다.width를 지정하주면 기준요소에서 너비를 가져오게된다.*/
+  width: 100%;
+  left:0; bottom: -300px;
+  transition: bottom 0.7s;
+  padding:50px 30px 30px;
+  /*배경이미지요소를 sprite 하지않고 아이콘하나만 작업했을시
+  background: no-repeat url(../img/main/play_circle_FILL0_wght500_GRAD0_opsz48.png) 30px 0px;
+  background-size: 30px 30px;
+  */}
+  li.service_thumbnail_box:hover .description {
+    bottom: 0;
+  }
+
+  /*sprite로 작업되었다면 :after에 주세요*/
+  li.service_thumbnail_box .description:after {
+  content: '';
+  display: block;
+  position: absolute; /*<-기준요소는 li.service_thumbnail_box .description  */
+  left: 30px; top: 0;
+  width: 23px; height: 23px;
+  background: no-repeat url(../img/sprite.png) ;
+  background-position: -199px -129px;
+  }
+li.service_thumbnail_box .description .title_text {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+li.service_thumbnail_box .description .desc_text {
+  font-size: 18px;
+  /* 한줄 말줄임 */
+  overflow: hidden;
+
+}
+
+
+
 .main_content .content_support{}
 
 
