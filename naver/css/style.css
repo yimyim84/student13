@@ -223,15 +223,27 @@ header{
   height: var(--header-height);
   background-color: rgba(255, 255, 255 0.7);
 }
+.main_content{}
+
+footer{
+background-color: rgba(0, 0, 0, 0.3);
+}
+
+header .header_wrap,
+footer .footer_wrap {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
 .header_wrap{
   display: flex;
   justify-content:space-between; /*양끝정렬 여백균등*/
   align-items: center; /*교차축 가운데*/
-  margin: 0 auto;
-  max-width: 1600px;
 }
   
-/* header */
+/**
+ header 
+ **/
    .header_logo{
     /* background-image: url(../img/header_logo.png);
     background-position: center;
@@ -412,14 +424,27 @@ header{
   */
 }
 .content_summary .summary_container{
+  position: relative; /*.content_summary .summary_container:after의 기준요소*/
   flex-basis: 25%; /*플렉스의 크기지정할때는 flex-basis로:가로축일때는 너비가크기값이고 세로축일때는 높이가크기값이다.*/
   /*기본값
   flex-grow: 0;
   flex-shrink: 1;
   */
   width: 25%; /*플렉스의 후손=플렉스아이템의 width.height때문에 값을 정확히 지정해줘야한다. */
-  border: 1px solid #f00;
-  padding-right: 50px;
+  padding:0 50px;
+}
+.content_summary .summary_container:first-child{
+ padding-left: 0;
+}
+.content_summary .summary_container:after{
+ content: '';
+ position: absolute;
+ right: 0; top: 0;
+ width: 1px; height: 100%;
+ background-color: #ccc;
+}
+.content_summary .summary_container:last-child:after{
+  display: none;
 }
 .content_summary h3{
   font-size: 14px;
@@ -488,7 +513,7 @@ header{
 }
 
 .content_summary .news{}
-.content_summary .career{
+.content_summary .career .text_wrap{
   font-size: 18px;
 }
 .content_summary .stock1{}
@@ -507,7 +532,7 @@ header{
 }
 .content_summary .stock1 .text_wrap .date{ text-align: right; }/*P태그는 블록 => 블록 안에서 정렬은 text-align으로*/
 
-.content_summary .stock2{
+.content_summary .stock2 .text_wrap{
   font-size: 18px;
 }
 
@@ -596,13 +621,163 @@ li.service_thumbnail_box .description .desc_text {
   font-size: 18px;
   /* 한줄 말줄임 */
   overflow: hidden;
-
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
+/* .main_content .content_support */
+.main_content .content_support{
+  margin-top: 150px;
+  text-align: center;
+}
+.content_support .support_title{
+  position: relative;
+  font-size: 32px; color: #333;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+/* 일정부분 작게 밑줄을 그릴때 after를 이용하여 */
+.content_support .support_title:after{
+  content: ''; /* ★after일때 꼭 써줘야하는 요소★*/
+  position: absolute;
+  left: 50%; bottom: 0;
+  width: 5rem; height: 2px;
+  background-color: var(--naver-color);
+  /* x좌표로 본인 크기의 반이 왼쪽으로 이동 */
+  transform: translateX(-50%);
+}
+.content_support .support_text{
+  font-size: 18px;
+  line-height: 1.6;
+}
+.content_support ul{
+  margin-top: 120px;
+  display: flex;
+  /* 정의하지 않아도 기본값 
+  flex-direction: row;
+  flex-wrap: nowrap; 줄바꿈있을때 flex-wrap: wrap; 
+  justify-content: start;
+  align-content: stretch; */
+}
+.content_support li{
+  /* 플렉스 아이템 */
+  flex-basis: 25%;
+  width: 25%;
+  box-sizing: border-box;
+  position: relative;
+}
+.content_support li:after{
+  content: '';
+  position: absolute;
+  right: 0; top: 0;
+  width: 1px; height: 100%;
+  background-color: #e5e5e5;
+}
+.content_support li:last-child:after{
+  display: none;
+}
+.content_support li a{
+  /* ★ bgi 링크걸리기 위해서 a태그 안에 넣는다. ★*/
+  display: block;
+  padding-top: 135px;
+  position: relative;
+}
 
+.content_support li a:after{
+  content: '';
+  position: absolute;
+  left: 50%; top: 0;
+  background: transparent no-repeat url(../img/sprite.png);
+  transform: translateX(-50%);/*left: 50%;를 지정했으므로 X좌표로 -50%이동 해야 이미지가 중간에 온다.*/
+  height: 106px;/*position: absolute; 지정시 높이(자식으로부터온다)를 지정해야한다.*/
+}
+.content_support li:nth-child(1) a:after{
+  width: 87px; 
+  background-position: 0 -957px;
+}
+.content_support li:nth-child(2) a:after{
+  width: 101px; 
+  background-position: -92px -957px;
+}
+.content_support li:nth-child(3) a:after{
+  width: 110px; 
+  background-position: -199px -957px;
+}
+.content_support li:nth-child(4) a:after{
+  width: 93px; 
+  background-position: -316px -957px;
+}
+.content_support li a .title_text{
+  color: var(--naver-color);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.content_support li a:hover .title_text{
+  text-decoration: underline;
+}
+.content_support li a .desc_text{
+  color: #878890;
+  line-height: 1.6;
+  font-size: 15px;
+}
 
-.main_content .content_support{}
+/** 
+footer 
+**/
+footer{
+  padding: 100px 0;
+}
+footer .footer_wrap{
+  display: flex;
+  position: relative;
+}
+.footer_wrap .flex_item{
+  /* width: 25%; */
+  /* 플레스 아이템 자신의 크기만큼 가져가기 위해서 단 컬럼 사이즈 (width:25%;)지정하지말고 */
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+.footer_wrap .footer_logo{
+  width: 63px; height: 13px;/* 플렉스 아이템 고유크기 지정*/
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url(../img/footer_logo.png);
+}
+.footer_wrap .footer_menu{
+  display: flex;
+  padding: 0 10px;
+}
+.footer_wrap .footer_menu li{
+  padding: 0 10px;
+  position: relative;
+  }
+  /*오른쪽에 선*/
+.footer_wrap .footer_menu li:after{
+  content: '';
+  position: absolute;
+  right: 0; top: 0; /*오른쪽에 선 위치지정*/
+  width: 1px; height: 100%;
+  background-color: #e5e5e5;
+}
+.footer_wrap .footer_menu li:last-child::after{
+  display: none;
+}
+.footer_wrap .footer_menu li a{}
 
+.footer_wrap .affiliate_box{
+  order: 1;
+  margin-left: auto;/*♥♥♥플렉스컨테이너의 남은 공간을 알아서 왼쪽여백주기♥♥♥*/
+}
+.footer_wrap .affiliate_box ul{
+  display: none;
+}
+.footer_wrap .footer_copy{
+  position: absolute;
+  left: 50%; top:0;
+  transform: translate(-50%);
+}
 
 /*********플러그인********/
 
